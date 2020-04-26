@@ -29,10 +29,12 @@ body a:hover {
         width: 45vw;
         height: 35vw;
     }
-    @media (max-width: 625px) {
-        .chart-container {
-            width: 75vw;
-            height: 75vw;
-        }
+    
+}
+
+@media (max-width: 625px) {
+    .chart-container {
+        width: 75vw;
+        height: 75vw;
     }
 }
