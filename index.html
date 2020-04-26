@@ -56,31 +56,24 @@
                 <p class="dataIdentifier">Double Rate (In Days): <span class="dataFromServer" id="usaDouble"></span></p>
             </div>
         </div>
-    </section>
-
-    <section class="container homeText mx-2">
+   
         <div class="row justify-content-center">
-            <div class="col-lg-10 order-1">
+            <div class=" col order-1">
                 <script type="text/javascript" src="https://code.jscharting.com/latest/modules/maps.js"></script>
                 <div id="chartDiv" style="width: 100%; height: 400px;"></div>
             </div>
-            <div class="col-lg-2 col-12 order-2">
-                <div class="chart-container" id="usaLineGraphDiv">
-                    <canvas id="usaLineGraph"></canvas>
-                </div>
-            </div>
-            <div class="col-lg-2 col-12 order-3">
-                <div class="chart-container" id="usaBarGraphDiv">
-                    <canvas id="usaBarGraph"></canvas>
-                </div>
-            </div>
-
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-2 col-12 order-3">
-                <div class="chart-container" id="usaPieGraphDiv">
-                    <canvas id="usaPieGraph"></canvas>
-                </div>
+            <div class="col-lg-6 col-12  order-1   chart-container" id="usaLineGraphDiv">                
+                <canvas id="usaLineGraph"></canvas>              
+            </div>
+            <div class="col-lg-6 col-12  order-2 chart-container" id="usaBarGraphDiv">                
+                <canvas id="usaBarGraph"></canvas>                
+            </div>
+        </div>
+        <div class="row justify-content-center " >
+            <div class="col-lg-6 col-12 chart-container" id="usaPieGraphDiv">                
+                <canvas id="usaPieGraph"></canvas>               
             </div>
         </div>
     </section>
@@ -92,7 +85,7 @@
                 <h2 class="dataIdentifier text-center">State: <span class="dataFromServer" id="stateSelected"></span></h2>
             </div>
         </div>
-        <div class="row align-items-center ">
+        <div class="row justify-content-center ">
             <div class="col-4 col-md-4 order-1 d-flex align-items-center">
                 <p class="dataIdentifier">Cases: <span class="dataFromServer" id="stateCases"></span></p>
             </div>
@@ -107,18 +100,14 @@
             </div>
         </div>
         <div class="row justify-content-center">
-            <div class="col-lg-10 order-1 chart-container" id="stateLineGraphDiv">
+            <div class="col-lg-6 col-12 order-1 chart-container" id="stateLineGraphDiv">
                 <canvas id="stateLineGraph"></canvas>
             </div>
-            <div class="col-lg-2 col-12 order-2">
-                <div class="chart-container" id="stateBarGraphDiv">
-                    <canvas id="stateBarGraph"></canvas>
-                </div>
+            <div class="col-lg-6 col-12 order-2 chart-container"  id="stateBarGraphDiv">         
+                <canvas id="stateBarGraph"></canvas>                
             </div>
-            <div class="col-lg-2 col-12 order-3">
-                <div class="chart-container" id="statePieGraphDiv">
-                    <canvas id="statePieGraph"></canvas>
-                </div>
+            <div class="col-lg-6 col-12 order-3 chart-container" id="statePieGraphDiv">                
+                <canvas id="statePieGraph"></canvas>                
             </div>
         </div>
     </section>
