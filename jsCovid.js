@@ -304,7 +304,7 @@ function lineChart(chartName, dataFunction) {
             maintainAspectRatio: false,
             title: {
                 display: true,
-                text: 'Culumative Cases with Outcomes',
+                text: 'Cumulative Cases with Outcomes',
                 top,
                 fontSize: 16
             }
