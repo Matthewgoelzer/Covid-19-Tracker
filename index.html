@@ -1,0 +1,148 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styleCovid.css">
+
+    <!-- font Awesome CDN -->
+    <script src="https://kit.fontawesome.com/d488350bce.js" crossorigin="anonymous"></script>
+    <title>Covid Tracker 2020</title>
+
+    <!-- Nunito font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700&display=swap" rel="stylesheet">
+
+    <!-- PT Serif Font -->
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav id="mainNavbar" class="navbar navbar-light navbar-expand-lg py-0 fixed-top container-fluid">
+
+    </nav>
+
+    <!-- USA -->
+    <div class="row justify-content-center m-5 ">
+        <div class="align-items-center">
+            <p class="">
+                This website is a tool to visualize Conid-19 Data for the United States of America. <br><br>
+                The first section repsents data for the entire United States. To look at a specific state, select a state <br>
+                on the map and that state's data will be located bellow. <br><br>
+                The data is updated daily by 5pm PST. <br><br>
+                This website is under constant updating. Therefore the layout and graphs may change over time.
+                 
+    
+            </p>        
+        </div>        
+     </div>
+    <section class="container mt-5 usaText">
+        <div class="row justify-content-center mt-5">
+            <h2>United States of America</h2>
+        </div>
+        <div class="row justify-content-center mt-5">
+            <div class="col-3 col-md-4 order-1 d-flex align-items-center">
+                <p class="dataIdentifier">Cases: <span class="dataFromServer" id="usaCases"></span></p>
+            </div>
+            <div class="col-3 col-md-4 order-2 d-flex justify-content-center">
+                <p class="dataIdentifier">Hospitalized: <span class="dataFromServer" id="usaHospitalized"></span></p>
+            </div>
+            <div class="col-3 col-md-4 order-3 d-flex justify-content-center">
+                <p class="dataIdentifier">Deaths: <span class="dataFromServer" id="usaDeaths"></span></p>
+            </div>
+            <div class="col-3 col-md-4 order-4 d-flex justify-content-center">
+                <p class="dataIdentifier">Double Rate (In Days): <span class="dataFromServer" id="usaDouble"></span></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="container homeText mx-2">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 order-1">
+                <script type="text/javascript" src="https://code.jscharting.com/latest/modules/maps.js"></script>
+                <div id="chartDiv" style="width: 100%; height: 400px;"></div>
+            </div>
+            <div class="col-lg-2 col-12 order-2">
+                <div class="chart-container" id="usaLineGraphDiv">
+                    <canvas id="usaLineGraph"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-2 col-12 order-3">
+                <div class="chart-container" id="usaBarGraphDiv">
+                    <canvas id="usaBarGraph"></canvas>
+                </div>
+            </div>
+
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-2 col-12 order-3">
+                <div class="chart-container" id="usaPieGraphDiv">
+                    <canvas id="usaPieGraph"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <!-- State -->
+    <section class="container mt-2 stateText">
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h2 class="dataIdentifier text-center">State: <span class="dataFromServer" id="stateSelected"></span></h2>
+            </div>
+        </div>
+        <div class="row align-items-center ">
+            <div class="col-4 col-md-4 order-1 d-flex align-items-center">
+                <p class="dataIdentifier">Cases: <span class="dataFromServer" id="stateCases"></span></p>
+            </div>
+            <div class="col-4 col-md-4 order-2 d-flex justify-content-center">
+                <p class="dataIdentifier">Hospitalized: <span class="dataFromServer" id="stateHospitalized"></span></p>
+            </div>
+            <div class="col-4 col-md-4 order-3 d-flex justify-content-center">
+                <p class="dataIdentifier">Deaths: <span class="dataFromServer" id="stateDeaths"></span></p>
+            </div>
+            <div class="col-4 col-md-4 order-3 d-flex justify-content-center">
+                <p class="dataIdentifier">Double Rate (In Days): <span class="dataFromServer" id="stateDouble"></span></p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-10 order-1 chart-container" id="stateLineGraphDiv">
+                <canvas id="stateLineGraph"></canvas>
+            </div>
+            <div class="col-lg-2 col-12 order-2">
+                <div class="chart-container" id="stateBarGraphDiv">
+                    <canvas id="stateBarGraph"></canvas>
+                </div>
+            </div>
+            <div class="col-lg-2 col-12 order-2">
+                <div class="chart-container" id="statePieGraphDiv">
+                    <canvas id="statePieGraph"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    
+
+    <!--<nav class="navbar navbar-expand-md bg-dark bottom bottom-navbar">
+        <h6 class="mb-0"> </h6>
+    </nav>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+    <script type="text/javascript" src="https://code.jscharting.com/latest/modules/toolbar.js"></script>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="jsCovid.js"></script>
+    <!-- background for nabar apear when scrolling -->
+    <script type="text/javascript">
+        $(function () {
+            $(document).scroll(function () {
+                var $nav = $("#mainNavbar");
+                $nav.toggleClass("scrolled", $(this).scrollTop() > $nav.height());
+            });
+        });
+    </script>
+</body>
+</html>
