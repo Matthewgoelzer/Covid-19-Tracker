@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 function usaCurrentData() {
 
     let req = new XMLHttpRequest();
-    req.open("GET", "https://covidtracking.com/api/us", false);
+    req.open("GET", "https://covidtracking.com/api/v1/us/current.json", false);
     req.send(null);
 
     let dataRes = JSON.parse(req.responseText);
@@ -52,7 +52,7 @@ function usaDouble(usaData) {
 function usaCasesGraph() {
 
     let req = new XMLHttpRequest();
-    req.open("GET", "https://covidtracking.com/api/states", false);
+    req.open("GET", "https://covidtracking.com/api/v1/states/current.json", false);
     req.send(null);
 
     let dataRes = JSON.parse(req.responseText);
@@ -107,7 +107,7 @@ function usaCasesGraph() {
 
 function getJsonUsaDaily() {
     let req = new XMLHttpRequest();
-    req.open("GET", "https://covidtracking.com/api/us/daily", false);
+    req.open("GET", "https://covidtracking.com/api/v1/us/daily.json", false);
     req.send(null);
 
     let dataRes = JSON.parse(req.responseText);
@@ -116,7 +116,7 @@ function getJsonUsaDaily() {
 
 function getJsonStateDaily(stateSelected) {
     let req = new XMLHttpRequest();
-    req.open("GET", "https://covidtracking.com/api/states/daily", false);
+    req.open("GET", "https://covidtracking.com/api/v1/states/daily.json", false);
     req.send(null);
     let data = JSON.parse(req.responseText);
 
@@ -142,7 +142,7 @@ function getJsonStateDaily(stateSelected) {
  function totalCases() {
 
      let req = new XMLHttpRequest();
-     req.open("GET", "https://covidtracking.com/api/us", false);
+     req.open("GET", "https://covidtracking.com/api/v1/us.json", false);
      req.send(null);
 
      let dataRes = JSON.parse(req.responseText);
@@ -169,7 +169,7 @@ function mapClick(data) {
 function displayStateData(stateSelected) {
 
     let req = new XMLHttpRequest();
-    req.open("GET", "https://covidtracking.com/api/states", false);
+    req.open("GET", "https://covidtracking.com/api/v1/states.json", false);
     req.send(null);
 
     let dataRes = JSON.parse(req.responseText);
